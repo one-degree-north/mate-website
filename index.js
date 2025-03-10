@@ -129,26 +129,27 @@ window.addEventListener('scroll', () => {
 });
 
 // Animation for intro sequence
+// Animation for intro sequence
 const tl = gsap.timeline();
 
 tl.to(".intro-circle", {
-    duration: 1,
+    duration: 0.8,
     scale: 1,
-    ease: "elastic.out(1, 0.3)"
+    ease: "power2.out" // Changed from elastic to a more professional easing
 })
 .to(".intro-text", {
-    duration: 0.8,
+    duration: 0.6,
     opacity: 1,
     y: 0,
     ease: "power2.out"
-}, "-=0.5")
+}, "-=0.3")
 .to([".intro-circle", ".intro-text"], {
-    duration: 0.6,
-    scale: 1.2,
+    duration: 0.7,
+    scale: 1.1,
     opacity: 0,
     ease: "power2.in",
     stagger: 0.1
-}, "+=1")
+}, "+=1.2")
 .to(".intro-overlay", {
     duration: 0.8,
     opacity: 0,
@@ -156,4 +157,26 @@ tl.to(".intro-circle", {
     onComplete: function() {
         document.querySelector(".intro-overlay").style.display = "none";
     }
+});
+
+// Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    
+    // Prevent scrolling when menu is open
+    document.body.classList.toggle('menu-open');
+});
+
+// Close menu when a nav link is clicked
+const navItems = document.querySelectorAll('.nav-item');
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    });
 });
