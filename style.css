@@ -361,6 +361,17 @@ h2 {
     transition: all 0.3s ease;
 }
 
+.history-line {
+    position: absolute;
+    top: 1450px;
+    left: 60px; /* Adjust this value to position the line */
+    width: 2px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    z-index: 1; /* Ensure the line is behind the cards */
+}
+
+
 .history-container {
     /* display: grid; */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

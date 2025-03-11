@@ -180,3 +180,12 @@ navItems.forEach(item => {
         document.body.classList.remove('menu-open');
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const depths = ["100m", "150m", "200m"]; // Example depths
+    const historyCards = document.querySelectorAll('.history-card');
+
+    historyCards.forEach((card, index) => {
+        card.setAttribute('data-depth', depths[index]);
+    });
+});
