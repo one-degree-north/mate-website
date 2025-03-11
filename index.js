@@ -189,3 +189,45 @@ document.addEventListener('DOMContentLoaded', () => {
         card.setAttribute('data-depth', depths[index]);
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const historyContainer = document.querySelector(".history-container");
+    const historyCards = document.querySelectorAll(".history-card");
+    const historyLine = document.createElement("div");
+
+    // historyLine.classList.add("history-line");
+    historyContainer.appendChild(historyLine);
+
+    // Position the vertical line to the left of the first history card
+    if (historyCards.length > 0) {
+        const cardLeft = historyCards[0].offsetLeft;
+        historyLine.style.left = `${cardLeft - 130}px`; // Adjust spacing
+    }
+
+    // Match height of container
+    historyLine.style.height = `${historyContainer.offsetHeight}px`;
+
+    // Add horizontal lines dynamically
+    const totalHeight = historyContainer.offsetHeight;
+    for (let i = 0; i < totalHeight; i += 50) { // Step every 10px
+        let depthLine = document.createElement("div");
+        depthLine.classList.add("history-depth-line");
+
+        // Make every 5th line thicker and brighter
+        if (i % 250 === 0) {
+            depthLine.classList.add("bold-depth-line");
+            
+            // Add metric depth label every 50m
+            let depthLabel = document.createElement("span");
+            depthLabel.classList.add("depth-label");
+            depthLabel.textContent = `${i / 10 * 10}m`; // Convert steps to metric depth
+            depthLabel.style.top = `${i}px`;
+            depthLabel.style.left = `${parseInt(historyLine.style.left) + 30}px`; // Position text to the right of depth line
+            historyContainer.appendChild(depthLabel);
+        }
+
+        depthLine.style.left = historyLine.style.left; // Align with vertical line
+        depthLine.style.top = `${i}px`; // Position each line
+        historyContainer.appendChild(depthLine);
+    }
+});

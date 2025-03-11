@@ -1,0 +1,49 @@
+/*intro*/
+
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a192f;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.intro-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: contain;
+    opacity: 0;
+    animation: fadeInScale 0.8s ease-out forwards;
+}
+
+.intro-text {
+    color: #ccd6f6;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 180, 255, 0.5);
+    white-space: nowrap;
+    opacity: 0;
+    animation: fadeInScale 0.8s ease-out forwards;
+}
+
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .intro-text {
+        font-size: 3rem;
+    }
+}
