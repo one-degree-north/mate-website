@@ -1,19 +1,26 @@
 body.menu-open {
     overflow: hidden;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'inter';
+    /* font-family: 'inter'; */
+    font-family: 'Poppins', sans-serif;
     cursor: none;
 }
+
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Add padding for fixed header */
+    scroll-padding-top: 80px;
+    /* Add padding for fixed header */
 }
+
 body {
-    background: #0a192f;
+    /* background: #0a192f; */
+    background: rgb(53,134,255);
+    background: linear-gradient(rgba(53,134,255,1) 25%, rgba(16,56,115,1) 60%);
     color: #8892b0;
     overflow-x: hidden;
     overflow-y: auto;
@@ -24,6 +31,7 @@ body {
         opacity: 0;
         transform: scale(0.8);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -35,6 +43,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -44,7 +53,7 @@ body {
 .logo-icon {
     width: 80px;
     height: 70px;
-    
+
     border-radius: 50%;
     transform: rotate(0deg);
     transition: transform 0.5s ease;
@@ -59,6 +68,18 @@ body {
     padding: 2rem;
     position: relative;
     overflow: hidden;
+    background-color: #1f2028;
+    z-index: -5;
+}
+
+.stars{
+    position:absolute;
+    width:100vw;
+    height:100vh;
+    left:0;
+    bottom:0;
+    pointer-events: none;
+    mix-blend-mode: screen;
 }
 
 .hero-content {
@@ -103,26 +124,31 @@ h1 {
 }
 
 .bubble {
-    width : 30px;
-    height : 30px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     background: rgba(100, 255, 218, 0.1);
     border-radius: 50%;
     pointer-events: none;
     animation: float 5s infinite;
-    z-index : 10;
+    z-index: 10;
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) translateX(0);
     }
+
     25% {
         transform: translateY(-20px) translateX(10px);
     }
+
     50% {
         transform: translateY(0) translateX(20px);
     }
+
     75% {
         transform: translateY(20px) translateX(10px);
     }
@@ -135,6 +161,73 @@ h1 {
     opacity: 0;
     transform: translateY(30px);
 }
+
+.wave .waves {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wave .waves .wave {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%; 
+    height: 100px;
+    background: url(wave.png);
+    background-size: 1000px 100px;
+}
+
+.wave .waves .wave#wave1{
+    opacity:1;
+    bottom: 0;
+    z-index: -1;
+    animation: waving 4s linear infinite;
+}
+
+.wave .waves .wave#wave2{
+    opacity:0.5;
+    bottom: 10px;
+    z-index: -2;
+    animation: waving2 2s linear infinite;
+}
+
+.wave .waves .wave#wave3{
+    opacity:0.2;
+    bottom: 15px;
+    z-index: -3;
+    animation: waving 4s linear infinite;
+}
+
+.wave .waves .wave#wave4{
+    opacity:0.7;
+    bottom: 20;
+    z-index: -2;
+    animation: waving2 2s linear infinite;
+}
+
+@keyframes waving {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+} 
+
+@keyframes waving2 {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+} 
+
+
 
 h2 {
     font-size: 2.5rem;
@@ -178,6 +271,7 @@ h2 {
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }
@@ -194,10 +288,14 @@ h2 {
 }
 
 #cursor {
-    width: 12px;    /* Reduced from 20px */
-    height: 12px;   /* Reduced from 20px */
-    background: white;  /* Adds fill color */
-    border: none;   /* Removes the border */
+    width: 12px;
+    /* Reduced from 20px */
+    height: 12px;
+    /* Reduced from 20px */
+    background: white;
+    /* Adds fill color */
+    border: none;
+    /* Removes the border */
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
@@ -208,7 +306,8 @@ h2 {
 
 .ripple {
     position: fixed;
-    background: rgba(0, 180, 255, 0.5);  /* Changed from border to background */
+    background: rgba(0, 180, 255, 0.5);
+    /* Changed from border to background */
     border: none;
     border-radius: 50%;
     pointer-events: none;
@@ -222,6 +321,7 @@ h2 {
         height: 0px;
         opacity: 0.5;
     }
+
     100% {
         width: 100px;
         height: 100px;
@@ -254,14 +354,15 @@ h2 {
 
 .history-depth-line {
     position: absolute;
-    width: 20px; 
+    width: 20px;
     height: 2px;
     background: rgba(255, 255, 255, 0.5);
 }
 
 .bold-depth-line {
     height: 2px;
-    background: white; /* Brighter and thicker */
+    background: white;
+    /* Brighter and thicker */
 }
 
 .depth-label {
@@ -269,7 +370,8 @@ h2 {
     font-size: 14px;
     color: white;
     font-weight: bold;
-    transform: translateY(-50%); /* Align text to middle of line */
+    transform: translateY(-50%);
+    /* Align text to middle of line */
 }
 
 /* .history-container {
@@ -283,7 +385,8 @@ h2 {
     position: relative;
     align-items: flex-start;
     gap: 2 rem;
-    margin-top: 3rem;;
+    margin-top: 3rem;
+    height: auto;
 }
 
 .history-card {
@@ -343,14 +446,12 @@ h2 {
 }
 
 
-.footer-content  {
-    background: #0a192f;
-    padding: 2rem 0;
+.footer-content {
+    /* padding: 2rem 0; */
     color: #8892b0;
-    border-top: 1px solid #233554;
-    padding: 2rem; /* Added left padding */
-    display:flex;
+    display: flex;
     justify-content: space-between;
+    transform: translateY(70px);
 }
 
 .footer-content div:last-child {
@@ -372,7 +473,8 @@ h2 {
 
 .footer .footer-item {
     width: 100%;
-    margin: 0.2rem 0; /* Add margin for spacing between links */
+    margin: 0.4rem 0;
+    /* Add margin for spacing between links */
     color: #8892b0;
     text-decoration: none;
     font-size: 0.8rem;
@@ -389,10 +491,11 @@ h2 {
     h1 {
         font-size: 2.5rem;
     }
+
     .subtitle {
         font-size: 1.2rem;
     }
-    
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -408,25 +511,25 @@ h2 {
         transition: right 0.3s ease;
         z-index: 105;
     }
-    
+
     .nav-links.active {
         right: 0;
     }
-    
+
     .nav-item {
         margin: 1.5rem 0;
         font-size: 1.2rem;
     }
-    
+
     /* Hamburger animation for open state */
     .hamburger.active span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
-    
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .hamburger.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }

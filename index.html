@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,11 @@
     <link rel="stylesheet" href="nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="intro-overlay">
         <div class="intro-logo">
@@ -45,16 +49,26 @@
 
     <section class="hero">
         <div class="hero-content">
+            <img src="stars.jpg" class="stars" alt="Stars">
             <h1>Blue Lobster ROV Team</h1>
             <p class="subtitle">Innovating Underwater Robotics for the MATE Competition</p>
             <a href="#about" class="cta-button">Discover Our Journey</a>
         </div>
     </section>
 
+    <section id="waves" class="wave">
+        <div class ="waves">
+            <div class="wave" id = "wave1"></div>
+            <div class="wave" id = "wave2"></div>
+            <div class="wave" id = "wave3"></div>
+            <div class="wave" id = "wave4"></div>
+        </div>
+    </section>
+
     <section id="about" class="section">
         <h2>About Us</h2>
         <p>*temporary text*</p>
-        
+
         <div class="card-container">
             <div class="card">
                 <h3>Innovation</h3>
@@ -71,14 +85,13 @@
         </div>
     </section>
 
-    
 
     <section id="team-history" class="section">
         <h2>Team History</h2>
         <p>*temporary text*</p>
-        
+
         <!-- Vertical line container -->
-    
+
         <div class="history-container">
             <!-- <div class="history-line"></div> -->
 
@@ -101,7 +114,7 @@
     <section id="members" class="section">
         <h2>Members</h2>
         <p>*temporary text*</p>
-        
+
         <div class="member-container">
             <div class="member-card">
                 <h3>Innovation</h3>
@@ -117,21 +130,24 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <img src="mate_logo.png" alt="MATE Logo" class="footer-icon">
-                <p>© 2024 | Blue Robster <br>Designed by Blue Robster Software Team</p>
+    <section id="footer" class="section">
+        <footer class="footer">
+            <div class="footer-content">
+                <div>
+                    <img src="mate_logo.png" alt="MATE Logo" class="footer-icon">
+                    <p>© 2024 | Blue Robster <br>Designed by Blue Robster Software Team</p>
+                </div>
+                <div>
+                    <a href="#" class="footer-item">Home</a>
+                    <a href="#about" class="footer-item">About</a>
+                    <a href="#team-history" class="footer-item">Team</a>
+                    <a href="#members" class="footer-item">Members</a>
+                    <a href="#contact" class="footer-item">Contact</a>
+                </div>
             </div>
-            <div>
-                <a href="#" class="footer-item">Home</a>
-                <a href="#about" class="footer-item">About</a>
-                <a href="#team-history" class="footer-item">Team</a>
-                <a href="#members" class="footer-item">Members</a>
-                <a href="#contact" class="footer-item">Contact</a>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </section>
     <script src="index.js"></script>
 </body>
+
 </html>
