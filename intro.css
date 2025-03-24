@@ -40,6 +40,10 @@
     animation: fadeInScale 0.8s ease-out forwards;
 }
 
+.historyLine{
+    height: 0px;
+}
+
 
 /* For smaller screens */
 @media (max-width: 768px) {

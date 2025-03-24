@@ -194,6 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const historyContainer = document.querySelector(".history-container");
     const historyCards = document.querySelectorAll(".history-card");
     const historyLine = document.createElement("div");
+    historyLine.style.height = "0px"; // Set initial height to 0
 
     // historyLine.classList.add("history-line");
     historyContainer.appendChild(historyLine);
@@ -205,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Match height of container
-    historyLine.style.height = `${historyContainer.offsetHeight}px`;
+    historyLine.style.height = `${historyContainer.offsetHeight} - 3284 px`;
 
     // Add horizontal lines dynamically
     const totalHeight = historyContainer.offsetHeight;
